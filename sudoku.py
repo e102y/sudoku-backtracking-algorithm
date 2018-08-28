@@ -16,13 +16,20 @@ class sudokuBoard():
         for row in range(9):
             tmp.append(self.plines[row][c])
         return tmp
-            
+    def getSq(self,r,c):
+        tmp = []
+        for row in range(3):
+            for col in range(3):
+                tmp.append(self.plines[row + r][col + c])
+        return tmp
 
 def main():
     #TODO input('Enter sudoku puzzle filename: ') 
     filename = 'puzzle'
     b = sudokuBoard(filename)
-    print( b.getCol(1) )
+    b.show()
+    print('#######################')
+    print( b.getSq(1,1) )
 
 if __name__ == "__main__":
     main()
