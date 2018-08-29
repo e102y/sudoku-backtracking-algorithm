@@ -103,7 +103,8 @@ def main():
     print( b.getVal(6,3))
     #commit sudoku
     print('#######################')
-    print(b.GISB(0, 0))
+    (c, d) = b.getNextVal(0, 0)
+    print(b.GISB(c, d))
     print('#######################')
     b.show()
     
