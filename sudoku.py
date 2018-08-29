@@ -48,9 +48,8 @@ class sudokuBoard():
         current = self.getVal(n, m)
         okay = False
         used = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        (r, c) = self.getNextVal(n, m)
-        if((r, c) == (-1, -1)):
-            return True;
+        
+        
         print("++test++")
         print("[", n, ", ", m, "]: ")
         self.show()
@@ -77,9 +76,13 @@ class sudokuBoard():
         while(not okay):
             
             if(q == -1):
+                self.setVal(n, m, 0)
                 return False;
             #set Value
             self.setVal(n, m, q)
+            (r, c) = self.getNextVal(n, m)
+            if((r, c) == (-1, -1)):
+                return True;
             okay = self.GISB(r, c)
             #select next valid number
             for p in range(10):
